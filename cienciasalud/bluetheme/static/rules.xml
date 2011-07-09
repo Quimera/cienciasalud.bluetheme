@@ -2,20 +2,22 @@
 <rules
     xmlns="http://namespaces.plone.org/diazo"
     xmlns:css="http://namespaces.plone.org/diazo+css"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    >
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <!-- Head: title -->
-    <replace theme="/html/head/title" content="/html/head/title" />
+    <theme href="theme.html" css:if-content="#visual-portal-wrapper" />
 
-    <!-- Base tag -->
-    <replace theme="/html/head/base" content="/html/head/base" />
+    <rules css:if-content="#visual-portal-wrapper">
+        <!-- Head: title -->
+        <replace css:theme="/html/head/title" css:content="/html/head/title" />
 
-    <!-- Drop styles in the head - these are added back by including them from Plone -->
-    <drop theme="/html/head/link" />
-    <drop theme="/html/head/style" />
+        <!-- Base tag -->
+        <replace css:theme="/html/head/base" css:content="/html/head/base" />
+        <replace css:content-children="//*[@id="portal-top"]" css:theme-children="//*[@id="header"]" />
+        <replace css:content-children="//*[@id="portal-column-two"]" css:theme-children="/html/body/div[3]/div[2]/div[2]" />
+        <replace css:content-children="//*[@id="portal-column-content"]" css:theme-children="//*[@id="content"]" />
+        <!-- Drop styles in the head - these are added back by including them from Plone -->
 
-    <!-- Pull in Plone CSS -->
-    <append theme="/html/head" content="/html/head/link | /html/head/style " />
+        <!-- Pull in Plone CSS -->
+    </rules>
 
 </rules>

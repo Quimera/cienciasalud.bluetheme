@@ -13,7 +13,7 @@
  <stylesheet title="" authenticated="False" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="on"
     expression="request/HTTP_X_THEME_ENABLED | nothing"
-    id="++resource++cienciasalud.bluetheme/styles.css" media="" rel="stylesheet"
+    id="++theme++cienciasalud.bluetheme/styles.css" media="" rel="stylesheet"
     rendering="link"
     applyPrefix="True"
     />
