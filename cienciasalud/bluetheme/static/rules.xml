@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/xdv"
+    xmlns:css="http://namespaces.plone.org/xdv+css">
+
+    <!-- Head: title -->
+    <replace theme="/html/head/title" content="/html/head/title" />
+
+    <!-- Base tag -->
+    <replace theme="/html/head/base" content="/html/head/base" />
+
+    <!-- Drop styles in the head - these are added back by including them from Plone -->
+    <drop theme="/html/head/link" />
+    <drop theme="/html/head/style" />
+
+    <!-- Pull in Plone CSS -->
+    <append theme="/html/head" content="/html/head/link | /html/head/style " />
+
+</rules>
