@@ -26,6 +26,7 @@ setup(name='cienciasalud.bluetheme',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'plone.app.theming',
       ],
       entry_points="""
       # -*- Entry points: -*-
