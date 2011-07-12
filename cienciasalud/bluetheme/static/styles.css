@@ -170,13 +170,19 @@ img.right {
 }
 
 /* Header */
-
+#leaderboard {
+    height: 90px;
+    width: 960px;
+    display: block;
+    background-image: url(images/bg_leaderboard.png);
+    margin: 0 auto;
+}
 #header {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#003366', endColorstr='#6699cc'); /* for IE */
     background: -webkit-gradient(linear, left top, left bottom, from(#003366), to(#6699cc)); /* for webkit browsers */
     background: -moz-linear-gradient(top,  #003366,  #6699cc); /* for firefox 3.6+ */ 
 	width: 960px;
-	height: 92px;
+	height: 100px;
 	margin: 0 auto;
 }
 
@@ -184,6 +190,7 @@ img.right {
 
 #logo {
 	float: left;
+    margin: 15px;
 }
 
 #logo h1, #logo h2 {
