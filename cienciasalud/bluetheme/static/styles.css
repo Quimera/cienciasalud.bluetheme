@@ -176,7 +176,9 @@ img.right {
     display: block;
     background-image: url(images/bg_leaderboard.png);
     margin: 0 auto;
+    text-align: center;
 }
+
 #header {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#003366', endColorstr='#6699cc'); /* for IE */
     background: -webkit-gradient(linear, left top, left bottom, from(#003366), to(#6699cc)); /* for webkit browsers */
@@ -321,6 +323,7 @@ img.right {
 #content {
 	float: left;
 	width: 520px;
+    margin:0;
 }
 
 /* Feature */
@@ -362,4 +365,9 @@ img.right {
 /* Plone overrides */
 #content div.newsImageContainer {
     float: left;
+}
+
+.portletWrapper h2 {
+    font-size: 12px; font-weight: bold;
+    text-transform: uppercase;
 }
