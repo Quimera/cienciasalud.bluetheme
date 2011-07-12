@@ -11,7 +11,9 @@ Released for free under a Creative Commons Attribution 2.5 License
 }
 
 body, th, td {
+    /*
 	background: #FFFFFF url(images/img01.gif) repeat-x;
+    */
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	color: #666666;
@@ -54,7 +56,6 @@ ul {
 
 ul li {
 	padding-left: 10px;
-	background: url(images/img16.gif) no-repeat 0px 10px;
 }
 
 a:link {
@@ -127,11 +128,11 @@ img.right {
 }
 
 .box-blue {
-	background: url(images/img13.gif) repeat-x;
+	background: url(images/pleca.png) repeat-x;
 }
 
 .box-blue .section {
-	background: url(images/img15.gif) no-repeat right top;
+	background: url(images/corner2.png) no-repeat right top;
 	font-size: 100%;
 	color: #FFFFFF;
 }
@@ -140,7 +141,7 @@ img.right {
 	display: block;
 	height: 23px;
 	padding: 7px 0 0 10px;
-	background: url(images/img14.gif) no-repeat;
+	background: url(images/corner1.png) no-repeat;
 }
 
 .box-blue .content {
@@ -171,6 +172,9 @@ img.right {
 /* Header */
 
 #header {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#003366', endColorstr='#6699cc'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#003366), to(#6699cc)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #003366,  #6699cc); /* for firefox 3.6+ */ 
 	width: 960px;
 	height: 92px;
 	margin: 0 auto;
@@ -344,4 +348,9 @@ img.right {
 	margin: 0;
 	text-align: center;
 	font-size: 85%;
+}
+
+/* Plone overrides */
+#content div.newsImageContainer {
+    float: left;
 }

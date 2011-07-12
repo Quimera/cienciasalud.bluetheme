@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rules
     xmlns="http://namespaces.plone.org/diazo"
-    xmlns:css="http://namespaces.plone.org/diazo+css"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <theme href="theme.html" css:if-content="#visual-portal-wrapper" />
 
     <rules css:if-content="#visual-portal-wrapper">
+        <!-- Add meta tags -->
+        <drop theme="/html/head/meta" />
+        <after content="/html/head/meta" theme-children="/html/head" />
+
+        <!-- Copy style, script and link tags in the order they appear in the content -->
+        <drop theme="/html/head/style" />
+        <drop theme="/html/head/script" />
+
+        <after
+            content="/html/head/style | /html/head/script | /html/head/link"
+            theme-children="/html/head"
+            />
+
         <!-- Head: title -->
-        <replace css:theme="/html/head/title" css:content="/html/head/title" />
+        <replace theme="title" content="title" />
 
         <!-- Base tag -->
-        <replace css:theme="/html/head/base" css:content="/html/head/base" />
-        <replace css:content-children="//*[@id="portal-top"]" css:theme-children="//*[@id="header"]" />
-        <replace css:content-children="//*[@id="portal-column-two"]" css:theme-children="/html/body/div[3]/div[2]/div[2]" />
-        <replace css:content-children="//*[@id="portal-column-content"]" css:theme-children="//*[@id="content"]" />
+        <replace theme="base" content="base" />
         <!-- Drop styles in the head - these are added back by including them from Plone -->
+        <replace css:theme-children="#menu" css:content="#portal-globalnav" />
+        <replace css:if-content="#portlets-above div.portletCarouselWrapper" css:theme="#feature > div.content" css:content="#portlets-above div.portletCarouselWrapper" />
+        <replace css:theme="#contents" css:content="#content" />
+        <replace css:theme-children="#colone" css:content-children="#portal-column-two" />
 
         <!-- Pull in Plone CSS -->
     </rules>
