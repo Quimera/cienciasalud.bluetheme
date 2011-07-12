@@ -181,7 +181,9 @@ img.right {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#003366', endColorstr='#6699cc'); /* for IE */
     background: -webkit-gradient(linear, left top, left bottom, from(#003366), to(#6699cc)); /* for webkit browsers */
     background: -moz-linear-gradient(top,  #003366,  #6699cc); /* for firefox 3.6+ */ 
-	width: 960px;
+    background-image: url(images/header.png);
+    background-repeat: repeat-x;
+    width: 960px;
 	height: 100px;
 	margin: 0 auto;
 }
