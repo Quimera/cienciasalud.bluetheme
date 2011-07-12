@@ -190,7 +190,7 @@ img.right {
 
 #logo {
 	float: left;
-    margin: 15px;
+    margin: 0 0 0 15px;
 }
 
 #logo h1, #logo h2 {
@@ -231,19 +231,19 @@ img.right {
 	border: none;
 }
 
-#searchinput, #searchsubmit {
+#searchinput, #nolivesearchGadget, #searchsubmit, .searchButton {
 	font: bold 100% Verdana, Arial, Helvetica, sans-serif;
 	color: #000000;
 }
 
-#searchinput {
+#searchinput, #nolivesearchGadget {
 	padding: 2px 5px;
 	width: 198px;
 	background: #FFFFFF url(images/img02.gif) repeat-x;
 	border: 1px solid #FFFFFF;
 }
 
-#searchsubmit {
+#searchsubmit, .searchButton {
 	padding: 0 2px;
 	background: #F4A652 url(images/img03.gif) repeat-x;
 	border: 1px solid #000000;
@@ -345,8 +345,8 @@ img.right {
 /* Footer */
 
 #footer {
-	height: 100px;
-	padding: 20px;
+	height: 100px; width: 960px;
+	margin: 0 auto; padding: 20px;
 	background: #DDDDDD;
 	border-top: 1px solid #999999;
 }
