@@ -103,7 +103,15 @@ img.right {
 .two-cols .col-one, .two-cols .col-two {
 	width: 250px;
 }
-
+#sidebar .col-one.wide  {
+    width: 340px;
+}
+#sidebar.wide {
+    width: auto;
+}
+#content.wide {
+    width: 600px;
+}
 /* Boxes */
 
 .box-orange {
@@ -186,7 +194,7 @@ img.right {
     background-image: url(images/header.png);
     background-repeat: repeat-x;
     width: 960px;
-	height: 100px;
+	height: 150px;
 	margin: 0 auto;
 }
 
@@ -237,7 +245,6 @@ img.right {
 
 #searchinput, #nolivesearchGadget, #searchsubmit, .searchButton {
 	font: bold 100% Verdana, Arial, Helvetica, sans-serif;
-	color: #000000;
 }
 
 #searchinput, #nolivesearchGadget {
@@ -245,47 +252,66 @@ img.right {
 	width: 198px;
 	background: #FFFFFF url(images/img02.gif) repeat-x;
 	border: 1px solid #FFFFFF;
+	color: #999999;
+}
+#nolivesearchGadget:focus {
+    color: #000000;
 }
 
 #searchsubmit, .searchButton {
-	padding: 0 2px;
-	background: #F4A652 url(images/img03.gif) repeat-x;
+	padding: 2px;
+    background-color: #dce89d;
+	color: #336699;
 	border: 1px solid #000000;
-	text-transform: lowercase;
+	text-transform: capitalize;
+    margin-left: 5px;
+}
+#searchsubmit:hover, .searchButton:hover {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dce89d', endColorstr='#c6db60'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#dce89d), to(#c6db60)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #dce89d,  #c6db60); /* for firefox 3.6+ */ 
+    color: #009dcf;
 }
 
 /* Menu */
 
 #menu {
+    clear: both;
 	width: 960px;
 	height: 30px;
-	margin: 0 auto;
+	margin: -20px auto 0 5px;
 }
 
 #menu ul {
+    clear: both;
 	margin: 0;
 	list-style: none;
 	line-height: normal;
 }
-
 #menu li {
 	display: block;
 	float: left;
-	margin-right: 1px;
+	margin-right: 3px;
 	padding: 0;
-	background: #FFFFFF;
 }
-
 #menu a {
 	display: block;
 	float: left;
-	background: url(images/img07.gif) no-repeat;
+    padding: 5px 15px;
+	color: #336699;
+	background-color: #dce89d;
 	text-decoration: none;
-	color: #666666;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
-#menu a:hover {
-	color: #1777B1;
+#menu a:hover, #menu li.selected a {
+	background-color: #c6db60;
+	color: #009dcf;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dce89d', endColorstr='#c6db60'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#dce89d), to(#c6db60)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #dce89d,  #c6db60); /* for firefox 3.6+ */ 
 }
 
 #menu b {
@@ -309,27 +335,37 @@ img.right {
 #menu li.active b {
 	background: url(images/img05.gif) no-repeat;
 }
-
+/*
+*/
 /* Page */
 
 #page {
 	width: 960px;
 	margin: 0 auto;
-	padding: 30px 0 0 0;
+	padding: 0;
+    background-color:none;
 }
 
 /* Content */
 
 #content {
+    background-color:#ffffff;
 	float: left;
 	width: 520px;
     margin:0;
+    font-size: 13px;
 }
-
+#content h1 {
+    font-size: 17px;
+}
+.wide #content .col-one {
+    width: 600px;
+}
 /* Feature */
 
 #feature {
 	margin-bottom: 20px;
+    min-height: 35px;
 }
 
 /* Sidebar */
@@ -363,11 +399,49 @@ img.right {
 }
 
 /* Plone overrides */
-#content div.newsImageContainer {
+#portal-breadcrumbs {
+    margin: 5px;
+}
+#portal-logo {
+    margin: 1.375em 0 0.75em 0;
+}
+#content img.tileImage, .newsMainStory img {
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+#content img.tileImage, #content div.newsImageContainer {
     float: left;
 }
-
+#content .tileHeadline {
+    line-height: 1.2em;
+}
+#content .tileBody {
+    line-height: 1.35em;
+}
+#content-core {
+    margin: 10px;
+}
 .portletWrapper h2 {
     font-size: 12px; font-weight: bold;
     text-transform: uppercase;
+}
+.carousel .scrollable {
+    height: 250px !important;
+}
+div.scrollable div.items div.itemPadding {
+   margin: 0.3em 1em;
+}
+div.navi a {
+    border: 1px solid #bbbbbb;
+}
+div.navi a.active {
+    background-color: #205C90;
+    border: 1px solid #205C90;
+}
+img.image-left, img.image-right {
+    border: none;
+}
+#viewlet-below-content {
+    clear: both;
 }

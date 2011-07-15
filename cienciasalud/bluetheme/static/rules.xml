@@ -4,15 +4,24 @@
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <theme href="theme.html" css:if-content="#visual-portal-wrapper" />
+    <theme href="home.html" />
+    <theme href="listing.html" css:if-content="body.template-folder_summary_view" />
+    <theme href="listing.html" css:if-content="body.template-folder_listing" />
+    <theme href="listing.html" css:if-content="body.template-folder_contents" />
+    <theme href="listing.html" css:if-content="body.template-disqus_summary_listing" />
+    <theme href="item.html" css:if-content="body.portaltype-news-item" />
+    <theme href="item.html" css:if-content="body.portaltype-collective-nitf-content" />
 
-    <rules css:if-content="#visual-portal-wrapper">
+    <rules css:if-content="#visual-portal-wrapper" >
         <!-- Add meta tags -->
         <drop theme="/html/head/meta" />
         <after content="/html/head/meta" theme-children="/html/head" />
 
         <!-- Copy style, script and link tags in the order they appear in the content -->
         <drop theme="/html/head/link" />
+        <!--
+        <drop css:content="link[href *='public.css']" />
+        -->
         <drop theme="/html/head/style" />
         <drop theme="/html/head/script" />
 
@@ -26,16 +35,23 @@
 
         <!-- Base tag -->
         <replace theme="base" content="base" />
+        <copy attributes="*" css:theme="body" css:content="body" />
         <!-- Drop styles in the head - these are added back by including them from Plone -->
+        <!--after css:theme="#logo" css:content="#portal-personaltools-wrapper" /-->
         <copy attributes="*" css:theme="#logo > a" css:content="#portal-logo" />
+        <drop css:content-children="#portal-searchbox .searchSection" />
         <replace css:theme-children="#search" css:content-children="#portal-searchbox" />
         <replace css:theme-children="#menu" css:content="#portal-globalnav" />
+        <replace css:theme="#crumbs" css:content="#portal-breadcrumbs" />
+        <drop attributes="id" css:content="#portal-globalnav" />
         <replace css:theme="#feature > div.content" css:content="#portlets-above div.portletCarouselWrapper" />
         <replace css:theme="#contents" css:content="#content" />
+        <after css:theme="#contents" css:content="#viewlet-below-content" />
         <replace css:theme-children="#colone" css:content-children="#portal-column-two" />
         <replace css:theme-children="#footer" css:content-children="#portal-footer" />
 
-        <!-- Pull in Plone CSS -->
+        <replace css:theme-children="#title > b" css:content-children="#parent-fieldname-title" />
+        <replace css:theme="#list-content" css:content="#content-core" />
     </rules>
 
 </rules>

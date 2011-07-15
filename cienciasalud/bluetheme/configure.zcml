@@ -16,6 +16,14 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="cienciasalud.bluetheme uninstall utility"
+      directory="profiles/uninstall"
+      description="Uninstalls the cienciasalud.bluetheme package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
   <plone:static
       type="theme" directory="static" />
 
