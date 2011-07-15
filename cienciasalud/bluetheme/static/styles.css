@@ -335,6 +335,12 @@ img.right {
 #menu li.active b {
 	background: url(images/img05.gif) no-repeat;
 }
+
+/* Date */
+#date {
+    display: inline-block;
+    float: right;
+}
 /*
 */
 /* Page */
@@ -401,6 +407,8 @@ img.right {
 /* Plone overrides */
 #portal-breadcrumbs {
     margin: 5px;
+    display: inline-block;
+    width: auto;
 }
 #portal-logo {
     margin: 1.375em 0 0.75em 0;
@@ -410,8 +418,13 @@ img.right {
     border: 1px solid #cccccc;
     border-radius: 5px;
 }
-#content img.tileImage, #content div.newsImageContainer {
+.listing #content img.tileImage, .listing #content div.newsImageContainer {
     float: left;
+}
+#content div.newsImageContainer p.discreet {
+    position: static;
+    background-color: #3a7ca6;
+    padding: 10px 5px;
 }
 #content .tileHeadline {
     line-height: 1.2em;
@@ -419,8 +432,8 @@ img.right {
 #content .tileBody {
     line-height: 1.35em;
 }
-#content-core {
-    margin: 10px;
+#content-core, #content .documentDescription {
+    margin: 10px !important;
 }
 .portletWrapper h2 {
     font-size: 12px; font-weight: bold;
@@ -444,4 +457,10 @@ img.image-left, img.image-right {
 }
 #viewlet-below-content {
     clear: both;
+}
+dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
+    padding: 5px;
+}
+dl.portlet {
+    margin: 0;
 }

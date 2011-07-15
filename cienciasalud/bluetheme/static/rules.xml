@@ -43,6 +43,8 @@
         <replace css:theme-children="#search" css:content-children="#portal-searchbox" />
         <replace css:theme-children="#menu" css:content="#portal-globalnav" />
         <replace css:theme="#crumbs" css:content="#portal-breadcrumbs" />
+        <replace method="raw" css:theme="#date span" css:content="#portlet-fecha" />
+        <drop css:content="#portlet-fecha" />
         <drop attributes="id" css:content="#portal-globalnav" />
         <replace css:theme="#feature > div.content" css:content="#portlets-above div.portletCarouselWrapper" />
         <replace css:theme="#contents" css:content="#content" />
@@ -51,6 +53,8 @@
         <replace css:theme-children="#footer" css:content-children="#portal-footer" />
 
         <replace css:theme-children="#title > b" css:content-children="#parent-fieldname-title" />
+        <replace css:theme="#description" css:content="#parent-fieldname-description" />
+
         <replace css:theme="#list-content" css:content="#content-core" />
     </rules>
 
