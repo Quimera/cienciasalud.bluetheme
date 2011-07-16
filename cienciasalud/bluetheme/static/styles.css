@@ -421,7 +421,10 @@ img.right {
 .listing #content img.tileImage, .listing #content div.newsImageContainer {
     float: left;
 }
-#content div.newsImageContainer p.discreet {
+.item #content div.newsImageContainer {
+    text-align: center;
+}
+.item #content div.newsImageContainer p.discreet {
     position: static;
     background-color: #3a7ca6;
     padding: 10px 5px;
@@ -463,4 +466,7 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
 }
 dl.portlet {
     margin: 0;
+}
+#legal, #links {
+    display: none;
 }
