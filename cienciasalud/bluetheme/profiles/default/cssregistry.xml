@@ -2,16 +2,16 @@
 <object name="portal_css">
 
  <!-- Set conditions on stylesheets we don't want to pull in -->
- <stylesheet
+ <!--stylesheet
      expression="not:request/HTTP_X_THEME_ENABLED | nothing"
      id="public.css"
-     />
+     /-->
 
  <!-- Add new stylesheets -->
  <!-- Note: applyPrefix is not available in Plone < 4.0b3 -->
 
  <stylesheet title="" authenticated="False" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    compression="safe" conditionalcomment="" cookable="True" enabled="off"
     expression="request/HTTP_X_THEME_ENABLED | nothing"
     id="++theme++cienciasalud.bluetheme/styles.css" media="" rel="stylesheet"
     rendering="link"
