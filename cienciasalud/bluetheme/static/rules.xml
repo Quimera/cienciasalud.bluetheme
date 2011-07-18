@@ -4,9 +4,8 @@
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <theme href="home.html" />
+    <theme href="home.html" css:if-content="#visual-portal-wrapper" />
     <!--notheme if="$ajax_load" /-->
-    <notheme if-path="image_view_fullscreen" />
     <theme href="listing.html" css:if-content="body.template-folder_summary_view" />
     <theme href="listing.html" css:if-content="body.template-folder_listing" />
     <theme href="listing.html" css:if-content="body.template-folder_contents" />
@@ -53,7 +52,7 @@
         <after css:theme-children="#content" css:content="#viewlet-below-content" />
         <strip css:content="#parent-fieldname-image" />
         <replace css:theme-children="#colone" css:content-children="#portal-column-two" />
-        <!--replace css:theme-children="#footer" css:content-children="#portal-footer" /-->
+        <replace css:theme-children="#footer" css:content-children="#portal-footer" />
 
         <replace css:theme-children="#title > b" css:content-children="#parent-fieldname-title" />
         <replace css:theme="#description" css:content="#parent-fieldname-description" />
