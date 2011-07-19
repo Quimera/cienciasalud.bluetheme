@@ -492,18 +492,43 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
 #legal, #links {
     display: none;
 }
-
+#page #edit-bar, #page #content-views, #page #contentActionMenus {
+    background: url("images/pleca.png") repeat-x scroll 0 0 transparent;
+    border: none;
+}
 #page #edit-bar ul {
     list-style-type: none;
-    margin: 0;
+    margin: 2px;
+}
+ {
 }
 #page #content-views li, #page #contentActionMenus li {
     display: inline;
     padding: 0;
 }
-#page #edit-bar a:link {
+#page #edit-bar a {
+	display: inline-block;
     border: none;
+    padding: 0 5px;
+	color: #336699;
+	background-color: #dce89d;
+    line-height: 19px;
+	text-decoration: none;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
+
+#page #edit-bar a:hover, #page #edit-bar li.selected a {
+	background-color: #c6db60;
+	color: #009dcf;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dce89d', endColorstr='#c6db60'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#dce89d), to(#c6db60)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #dce89d,  #c6db60); /* for firefox 3.6+ */ 
+}
+#page #edit-bar li.selected a {
+    color: #000000;
+}   
 .special, #portal-personaltools ul, #portal-sitemap {
     text-align: left;
 }
