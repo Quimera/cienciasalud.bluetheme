@@ -4,6 +4,9 @@
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+    <theme href="home.html" css:if-content="body.template-folder_summary_view.portaltype-plone-site" />
+    <theme href="home.html" css:if-content="body.template-folder_listing.portaltype-plone-site" />
+    <theme href="home.html" css:if-content="body.template-folder_contents.portaltype-plone-site" />
     <theme href="listing.html" css:if-content="body.template-folder_summary_view" />
     <theme href="listing.html" css:if-content="body.template-folder_listing" />
     <theme href="listing.html" css:if-content="body.template-folder_contents" />
@@ -20,8 +23,10 @@
     <theme href="noads.html" css:if-content="body.template-manage-dashboard" />
     <theme href="noads.html" css:if-content="body.template-personal-preferences" />
     <theme href="noads.html" css:if-content="body.template-search" />
-    <theme href="home.html" css:if-content="body.template-search_form" />
-    <theme href="home.html" css:if-content="#visual-portal-wrapper" />
+    <theme href="noads.html" css:if-content="body.template-search_form" />
+
+    <theme href="home.html" css:if-content="body.template-collage_view" />
+    <theme href="noads.html" css:if-content="#visual-portal-wrapper" />
 
     <notheme if="$ajax_load" />
     <rules css:if-content="#visual-portal-wrapper" >
@@ -85,6 +90,7 @@
         <!-- -->
         <before css:theme="#list-content" css:content="#edit-bar" />
         <replace css:theme=".item #list-content" css:content="#content" />
+        <replace css:theme=".special #list-content" css:content-children="#content" />
         <replace css:theme="#list-content" css:content="#content-core" />
 
         <!-- FOOTER -->

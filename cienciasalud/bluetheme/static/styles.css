@@ -161,6 +161,7 @@ img.right {
 	height: 23px;
 	padding: 7px 0 0 10px;
 	background: url(images/corner1.png) no-repeat;
+    overflow: hidden;
 }
 
 .box-blue .content {
