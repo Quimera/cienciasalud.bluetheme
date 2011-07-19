@@ -73,16 +73,16 @@
         <after css:theme-children="#enfer" css:content="dl.portlet-collection-enfermedades" />
         <drop css:content="dl.portlet-collection-enfermedades .portletHeader" />
 
-        <replace method="raw" css:theme-children="#enfer h2" css:content="dl.portlet-collection-medicina-preventiva .portletHeader a" />
-        <after css:theme-children="#enfer" css:content="dl.portlet-collection-medicina-preventiva" />
+        <replace method="raw" css:theme-children="#medpr h2" css:content="dl.portlet-collection-medicina-preventiva .portletHeader a" />
+        <after css:theme-children="#medpr" css:content="dl.portlet-collection-medicina-preventiva" />
         <drop css:content="dl.portlet-collection-medicina-preventiva .portletHeader" />
         
-        <replace method="raw" css:theme-children="#enfer h2" css:content="dl.portlet-collection-medicina-natural .portletHeader a" />
-        <after css:theme-children="#enfer" css:content="dl.portlet-collection-medicina-natural" />
+        <replace method="raw" css:theme-children="#medna h2" css:content="dl.portlet-collection-medicina-natural .portletHeader a" />
+        <after css:theme-children="#medna" css:content="dl.portlet-collection-medicina-natural" />
         <drop css:content="dl.portlet-collection-medicina-natural .portletHeader" />
         
-        <replace method="raw" css:theme-children="#enfer h2" css:content="dl.portlet-collection-personalidades .portletHeader a" />
-        <after css:theme-children="#enfer" css:content="dl.portlet-collection-personalidades" />
+        <replace method="raw" css:theme-children="#perso h2" css:content="dl.portlet-collection-personalidades .portletHeader a" />
+        <after css:theme-children="#perso" css:content="dl.portlet-collection-personalidades" />
         <drop css:content="dl.portlet-collection-personalidades .portletHeader" />
         <!-- -->
         <replace method="raw" css:theme-children="#title > b" css:content-children="#parent-fieldname-title" />
@@ -107,9 +107,6 @@
         <!-- MANAGE-PORTLETS -->
         <drop css:if-content="body.template-manage-portlets" theme="/html/body/div[3]/div[2]/div/div[1]" />
         <drop css:if-content="body.template-manage-portlets" theme="/html/body/div[3]/div[2]/div/div[3]" />
-        <before css:content-children="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f506c6f6e650a656e6665726d6564616465732d31 dt.portletHeader a">
-            <img src="++theme++cienciasalud.bluetheme/enfermedades.png" class="image-left" alt="estetoscopio" />
-        </before>
     </rules>
 
 </rules>
