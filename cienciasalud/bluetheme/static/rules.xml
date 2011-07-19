@@ -11,10 +11,14 @@
     <theme href="item.html" css:if-content="body.portaltype-news-item" />
     <theme href="item.html" css:if-content="body.portaltype-document" />
     <theme href="item.html" css:if-content="body.portaltype-collective-nitf-content" />
+    <theme href="noads.html" css:if-content="body.template-sitemap" />
     <theme href="noads.html" css:if-content="body.template-login_form" />
     <theme href="noads.html" css:if-content="body.template-logged_out" />
     <theme href="noads.html" css:if-content="body.template-default_error_message" />
     <theme href="noads.html" css:if-content="body.template-overview-controlpanel" />
+    <theme href="noads.html" css:if-content="body.template-dashboard" />
+    <theme href="noads.html" css:if-content="body.template-manage-dashboard" />
+    <theme href="noads.html" css:if-content="body.template-personal-preferences" />
     <theme href="noads.html" css:if-content="body.template-search" />
     <theme href="home.html" css:if-content="body.template-search_form" />
     <theme href="home.html" css:if-content="#visual-portal-wrapper" />

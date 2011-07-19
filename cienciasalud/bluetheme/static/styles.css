@@ -448,6 +448,7 @@ img.right {
 }
 #content-core, #content .documentDescription {
     margin: 10px !important;
+    text-align: left;
 }
 .portletWrapper h2 {
     font-size: 12px; font-weight: bold;
@@ -492,4 +493,10 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
 }
 #page #edit-bar a:link {
     border: none;
+}
+.special, #portal-personaltools ul, #portal-sitemap {
+    text-align: left;
+}
+#portal-personaltools li {
+    padding: 0;
 }
