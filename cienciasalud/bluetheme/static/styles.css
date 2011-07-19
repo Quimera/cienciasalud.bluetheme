@@ -539,3 +539,6 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
 #colone dl.portlet dt {
     background: none;
 }
+#colone dl.portlet a:link {
+    border: none;
+}

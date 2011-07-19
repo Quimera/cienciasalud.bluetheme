@@ -93,6 +93,9 @@
         <!-- MANAGE-PORTLETS -->
         <drop css:if-content="body.template-manage-portlets" theme="/html/body/div[3]/div[2]/div/div[1]" />
         <drop css:if-content="body.template-manage-portlets" theme="/html/body/div[3]/div[2]/div/div[3]" />
+        <before css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f506c6f6e650a656e6665726d6564616465732d31 .portletHeader > a">
+            <img src="images/enfermedades.png" class="image-left" alt="estetoscopio">
+        </before>
     </rules>
 
 </rules>
