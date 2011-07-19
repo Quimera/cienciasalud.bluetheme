@@ -69,19 +69,19 @@
         <after css:theme-children="#content" css:content="#viewlet-below-content" />
         <!-- -->
         <!--replace css:theme-children="#colone" css:content-children="#portal-column-two" /-->
-        <replace method="raw" css:theme-children="#enfer h2" css:content="dl.portlet-collection-enfermedades .portletHeader a" />
+        <replace method="raw" css:theme-children="#enfer h2 span" css:content="dl.portlet-collection-enfermedades .portletHeader a" />
         <after css:theme-children="#enfer" css:content="dl.portlet-collection-enfermedades" />
         <drop css:content="dl.portlet-collection-enfermedades .portletHeader" />
 
-        <replace method="raw" css:theme-children="#medpr h2" css:content="dl.portlet-collection-medicina-preventiva .portletHeader a" />
+        <replace method="raw" css:theme-children="#medpr h2 span" css:content="dl.portlet-collection-medicina-preventiva .portletHeader a" />
         <after css:theme-children="#medpr" css:content="dl.portlet-collection-medicina-preventiva" />
         <drop css:content="dl.portlet-collection-medicina-preventiva .portletHeader" />
         
-        <replace method="raw" css:theme-children="#medna h2" css:content="dl.portlet-collection-medicina-natural .portletHeader a" />
+        <replace method="raw" css:theme-children="#medna h2 span" css:content="dl.portlet-collection-medicina-natural .portletHeader a" />
         <after css:theme-children="#medna" css:content="dl.portlet-collection-medicina-natural" />
         <drop css:content="dl.portlet-collection-medicina-natural .portletHeader" />
         
-        <replace method="raw" css:theme-children="#perso h2" css:content="dl.portlet-collection-personalidades .portletHeader a" />
+        <replace method="raw" css:theme-children="#perso h2 span" css:content="dl.portlet-collection-personalidades .portletHeader a" />
         <after css:theme-children="#perso" css:content="dl.portlet-collection-personalidades" />
         <drop css:content="dl.portlet-collection-personalidades .portletHeader" />
         <!-- -->
