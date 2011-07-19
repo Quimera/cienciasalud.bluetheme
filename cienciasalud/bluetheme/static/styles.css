@@ -409,6 +409,16 @@ img.right {
 	border-top: 1px solid #999999;
 }
 
+#footer a {
+	display: inline-block;
+    padding: 5px 5px;
+	color: #336699;
+	text-decoration: none;
+    font-weight: bold;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
 #footer p {
 	margin: 0;
 	text-align: center;
