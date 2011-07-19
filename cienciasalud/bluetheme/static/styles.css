@@ -461,7 +461,7 @@ img.right {
     margin: 10px !important;
     text-align: left;
 }
-.portletWrapper h2 {
+.portletWrapper h2, .portletWrapper .portletHeader a span {
     font-size: 12px; font-weight: bold;
     text-transform: uppercase;
 }
@@ -535,4 +535,7 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
 }
 #portal-personaltools li {
     padding: 0;
+}
+#colone dl.portlet dt {
+    background: none;
 }
