@@ -461,7 +461,13 @@ img.right {
     margin: 10px !important;
     text-align: left;
 }
-.portletWrapper h2, .portletWrapper .portletHeader a span {
+#colone > div {
+    clear: both;
+}
+#colone > div > img {
+    float: left;
+}
+#colone > div > h2, .portletWrapper h2, .portletWrapper .portletHeader a span {
     font-size: 12px; font-weight: bold;
     text-transform: uppercase;
 }
