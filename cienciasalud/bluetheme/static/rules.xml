@@ -77,6 +77,7 @@
         <!-- -->
         <strip css:if-content="body.template-overview-controlpanel" css:content="#content" />
         <replace css:if-content="body.template-overview-controlpanel" css:theme="#list-content" content="/html/body/div/div[2]/div/div[2]" />
+        <replace css:if-content="body.template-manage-portlets" css:theme-children="#colone" css:content-children="#portal-column-two" />
         <!-- -->
         <before css:theme="#list-content" css:content="#edit-bar" />
         <replace css:theme=".item #list-content" css:content="#content" />
@@ -124,6 +125,7 @@
                 width="32" height="32" class="image-left"
                 alt="Personalidades" />
         </before>
+        <after css:theme-children="#colone" css:content="div.managePortletsLink" />
         <!-- MANAGE-PORTLETS -->
         <drop css:if-content="body.template-manage-portlets" theme="/html/body/div[3]/div[2]/div/div[1]" />
         <drop css:if-content="body.template-manage-portlets" theme="/html/body/div[3]/div[2]/div/div[3]" />
