@@ -13,6 +13,7 @@
     <theme href="listing.html" css:if-content="body.template-folder_listing" />
     <theme href="listing.html" css:if-content="body.template-folder_contents" />
     <theme href="listing.html" css:if-content="body.template-disqus_summary_listing" />
+    <theme href="item.html" css:if-content="body.template-atct_edit" />
     <theme href="item.html" css:if-content="body.template-manage-portlets" />
     <theme href="item.html" css:if-content="body.portaltype-news-item" />
     <theme href="item.html" css:if-content="body.portaltype-document" />
