@@ -101,7 +101,7 @@
         <replace method="raw" css:theme-children="#medpr h2 span" css:content="dl.portlet-collection-medicina-preventiva .portletHeader a" />
         <after css:theme-children="#medpr" css:content="dl.portlet-collection-medicina-preventiva" />
         <drop css:content="dl.portlet-collection-medicina-preventiva .portletHeader" />
-        <before css:if-content="dl.portlet-collection-medicina-preventiva" css:theme="#enfer h2">
+        <before css:if-content="dl.portlet-collection-medicina-preventiva" css:theme="#medpr h2">
             <img src="++theme++cienciasalud.bluetheme/images/preventiva.png"
                 width="32" height="32" class="image-left"
                 alt="Medicina preventiva" />
@@ -110,7 +110,7 @@
         <replace method="raw" css:theme-children="#medna h2 span" css:content="dl.portlet-collection-medicina-natural .portletHeader a" />
         <after css:theme-children="#medna" css:content="dl.portlet-collection-medicina-natural" />
         <drop css:content="dl.portlet-collection-medicina-natural .portletHeader" />
-        <before css:if-content="dl.portlet-collection-medicina-natural" css:theme="#enfer h2">
+        <before css:if-content="dl.portlet-collection-medicina-natural" css:theme="#medna h2">
             <img src="++theme++cienciasalud.bluetheme/images/natural.png"
                 width="32" height="32" class="image-left"
                 alt="Medicina natural" />
@@ -119,7 +119,7 @@
         <replace method="raw" css:theme-children="#perso h2 span" css:content="dl.portlet-collection-personalidades .portletHeader a" />
         <after css:theme-children="#perso" css:content="dl.portlet-collection-personalidades" />
         <drop css:content="dl.portlet-collection-personalidades .portletHeader" />
-        <before css:if-content="dl.portlet-collection-personalidades" css:theme="#enfer h2">
+        <before css:if-content="dl.portlet-collection-personalidades" css:theme="#perso h2">
             <img src="++theme++cienciasalud.bluetheme/images/personalidades.png"
                 width="32" height="32" class="image-left"
                 alt="Personalidades" />
