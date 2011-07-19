@@ -70,8 +70,10 @@
         <replace css:theme-children="#footer" css:content-children="#portal-footer" />
 
         <!-- -->
-        <replace css:theme-children="#title > b" css:content-children="#parent-fieldname-title" />
-        <replace css:theme="#description" css:content="#parent-fieldname-description" />
+        <replace method="raw" css:theme-children="#title > b" css:content-children="#parent-fieldname-title" />
+        <replace method="raw" css:theme="#description" css:content="#parent-fieldname-description" />
+        <drop css:content="#parent-fieldname-title" />
+        <drop css:content="#parent-fieldname-description" />
         <strip css:content="#parent-fieldname-image" />
 
         <!-- -->
