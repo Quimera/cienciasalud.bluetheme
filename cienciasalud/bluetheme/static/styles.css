@@ -112,6 +112,17 @@ img.right {
 #content.wide {
     width: 600px;
 }
+#content.widest {
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+.widest .col-one {
+    float: none;
+}
+.special #content ul.configlets {
+    text-align: left;
+}
 /* Boxes */
 
 .box-orange {
@@ -464,9 +475,21 @@ img.image-left, img.image-right {
 dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
     padding: 5px;
 }
-dl.portlet {
+#page dl, dl.portlet {
     margin: 0;
 }
 #legal, #links {
     display: none;
+}
+
+#page #edit-bar ul {
+    list-style-type: none;
+    margin: 0;
+}
+#page #content-views li, #page #contentActionMenus li {
+    display: inline;
+    padding: 0;
+}
+#page #edit-bar a:link {
+    border: none;
 }

@@ -11,7 +11,7 @@
  <!-- Note: applyPrefix is not available in Plone < 4.0b3 -->
 
  <stylesheet title="" authenticated="False" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="off"
+    compression="safe" conditionalcomment="" cookable="True" enabled="False"
     expression="request/HTTP_X_THEME_ENABLED | nothing"
     id="++theme++cienciasalud.bluetheme/styles.css" media="" rel="stylesheet"
     rendering="link"
