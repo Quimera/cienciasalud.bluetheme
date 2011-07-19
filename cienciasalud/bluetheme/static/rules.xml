@@ -88,6 +88,10 @@
         <!-- FOOTER -->
         <replace css:theme="#footer #links" css:content="#portal-footer #footer-links" />
         <replace css:theme="#footer #legal" css:content="#portal-footer #footer-legal" />
+
+        <!-- MANAGE-PORTLETS -->
+        <drop css:if-content="body.template-manage-portlets" theme="/html/body/div[3]/div[2]/div/div[1]" />
+        <drop css:if-content="body.template-manage-portlets" theme="/html/body/div[3]/div[2]/div/div[3]" />
     </rules>
 
 </rules>
