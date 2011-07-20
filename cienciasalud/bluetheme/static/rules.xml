@@ -68,6 +68,7 @@
         <!-- -->
         <after css:theme-children="#content" css:content="#viewlet-below-content" />
         <!-- -->
+        <replace method="raw" css:theme-children="#title > b" css:content-children="#parent-fieldname-title" />
         <strip css:content="#parent-fieldname-image" />
 
         <!-- -->
