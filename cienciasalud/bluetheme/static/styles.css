@@ -559,7 +559,7 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
 #colone dl.portlet a:link {
     border: none;
 }
-#page.item dl.portlet {
+#page.listing dl.portlet, #page.item dl.portlet {
     margin-left: 40px;
 }
 .item #parent-fieldname-title {
