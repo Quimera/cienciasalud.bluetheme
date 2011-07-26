@@ -453,6 +453,8 @@ img.right {
 }
 #content .tileHeadline {
     line-height: 1.2em;
+    font-size: 27px;
+    font-weight: bold;
 }
 #content .tileBody {
     line-height: 1.35em;
