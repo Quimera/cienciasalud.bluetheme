@@ -242,7 +242,7 @@ img.right {
 
 /* Search */
 
-#search {
+#header #search {
 	float: right;
 	width: 300px;
 	padding-top: 55px;
