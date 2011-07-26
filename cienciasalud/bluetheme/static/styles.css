@@ -456,7 +456,7 @@ img.right {
     font-size: 27px;
     font-weight: bold;
 }
-.newsMainStory a {
+.newsMainStory a:link {
     border: none;
 }
 #content .tileBody {
