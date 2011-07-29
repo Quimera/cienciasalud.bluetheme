@@ -451,10 +451,13 @@ img.right {
     background-color: #3a7ca6;
     padding: 10px 5px;
 }
-#content .tileHeadline, .newsMainStory h1 {
+#content .tileHeadline, .newsMainStory h1, .item #content h1.documentFirstHeading {
     line-height: 1.2em;
     font-size: 27px;
     font-weight: bold;
+}
+.item #content h1.documentFirstHeading {
+    margin: 10px;
 }
 .newsMainStory a:link {
     border: none;

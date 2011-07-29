@@ -77,7 +77,7 @@
         <replace css:if-content="body.template-manage-portlets" css:theme-children="#colone" css:content-children="#portal-column-two" />
         <!-- -->
         <before css:theme="#list-content" css:content="#edit-bar" />
-        <replace css:theme=".item #list-content" css:content="#content" />
+        <replace css:theme=".item #list-content" css:content-children="#content" />
         <replace css:theme=".special #list-content" css:content-children="#content" />
         <replace css:theme="#list-content" css:content="#content-core" />
 
