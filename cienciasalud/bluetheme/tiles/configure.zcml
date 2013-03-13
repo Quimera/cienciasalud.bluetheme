@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="cienciasalud.bluetheme">
+
+
+    <plone:tile
+        name="cienciasalud.portada.nitfsecondary"
+        title="Cienciasalud Secondary Tile"
+        description="A tile that shows a list of secondary News Articles"
+        add_permission="cmf.ModifyPortalContent"
+        schema=".nitf.INitfSecundary"
+        class=".nitf.NitfSecundary"
+        permission="zope2.View"
+        for="*"
+        i18n:attributes="title;description"
+        />
+    
+</configure>

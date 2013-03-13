@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="cienciasalud.bluetheme">
+
+<body>
+  <div class="sortable-tile nitf-secundary">
+        <tal:items repeat="obj view/results">
+        <div class="nitf-secondary-item"
+             tal:attributes="data-uid python:view.get_uid(obj)"
+             tal:define="article_url obj/absolute_url">
+            <div class="nitf-data">
+                <!-- <div>
+                    <span class="secondary-section" tal:content="obj/section" />
+                </div> -->
+                <div class="secondary-title">
+                    <h4>
+                        <a href="" tal:attributes="href article_url;
+                                                   title obj/Description" tal:content="obj/Title"/>
+                    </h4>
+                </div>
+                <div class="secondary-description" tal:content="obj/Description"/>
+
+                <div class="more-info">
+                    <a href="#" 
+                        tal:attributes="href article_url;
+                                        title obj/Description" i18n:translate="">Read More</a>
+                </div>
+          </div>
+        </div>
+        </tal:items>
+        <div style="clear:both;"></div>
+      </div>
+</body>
+</html>

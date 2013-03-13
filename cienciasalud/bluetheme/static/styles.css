@@ -574,3 +574,17 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
     font-size: 23px;
     color: #336699;
 }
+
+
+
+/*HOME PORTADA*/
+.nitf-secondary-item {
+    width: 196px;
+    float: left;
+    border-bottom: 5px solid #336699;
+    position: relative;
+    height: 235px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
