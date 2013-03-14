@@ -28,6 +28,9 @@ setup(name='cienciasalud.bluetheme',
           # -*- Extra requirements: -*-
           'plone.app.theming',
           'collective.cover',
+          'collective.prettydate',
+          'openmultimedia.api',
+          'python-twitter',
       ],
       entry_points="""
       # -*- Entry points: -*-

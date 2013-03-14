@@ -579,7 +579,7 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
 
 /*HOME PORTADA*/
 .nitf-secondary-item {
-    width: 196px;
+    width: 275px;
     float: left;
     border-bottom: 5px solid #336699;
     position: relative;
@@ -587,4 +587,29 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
     margin-left: 15px;
     margin-bottom: 30px;
     overflow: hidden;
+}
+
+/*SIDEBAR*/
+.portaltype-collective-cover-content .portlet {
+    background: url("images/pleca.png") repeat-x scroll 0 0 transparent;
+}
+.portaltype-collective-cover-content #sidebar .portlet .portletHeader {
+    background: url("images/corner2.png") no-repeat scroll right top transparent;
+    color: #FFFFFF;
+    font-size: 100%;
+    padding: 0px;
+}
+.portaltype-collective-cover-content #sidebar .portlet .portletHeader span {
+    background: url("images/corner1.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 23px;
+    overflow: hidden;
+    padding: 7px 0 0 10px;
+    font-size: 13px;
+}
+.portaltype-collective-cover-content #sidebar .portlet .portletHeader a {
+    color:#FFF;
+}
+.portletTopLeft, .portletTopRight {
+    display:none !important;
 }

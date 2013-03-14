@@ -1,0 +1,110 @@
+<dl class="portlet portletMultimedia"
+    i18n:domain="laradiodelsur.web.theme">
+
+    <ul class="nav nav-tabs" id="gallery-videos-tile">
+        <li id="galleries_tab" class="active">
+            <a href="#galleries" data-toggle="tab" i18n:translate="">Galleries</a>
+        </li>
+        <li>
+            <a href="#recent_videos" data-toggle="tab" i18n:translate="">Recent Videos</a>
+        </li>
+    </ul>
+
+    <div class="tab-content videos-tab">
+        <div class="tab-pane active" id="galleries">
+            <div class="gallery-accordion carousel slide" id="gallery-tile">
+                <div class="carousel-inner">
+                    <tal:items repeat="brain view/galleries">
+                    <div tal:define="gal_obj brain/getObject;
+                                     portal_url context/@@plone_portal_state/portal_url;
+                                     start repeat/brain/start"
+                        tal:attributes="class python:'active item' if start else 'item'">
+                        <div class="tile-gallery-photo"
+                            tal:attributes="class python:'tile-gallery-photo open' if start else 'tile-gallery-photo'">
+                            <a tal:condition="python:view.has_images(gal_obj)"
+                                tal:attributes="href gal_obj/absolute_url">
+                                <img tal:define="img python:view.getImage(gal_obj);
+                                                 blank_img string:${portal_url}/++theme++laradiodelsur.web.theme/img/blank.gif;
+                                                 scales img/@@images;
+                                                 thumbnail python: scales.scale('image', scale='section_small')"
+                                    tal:condition="thumbnail"
+                                    tal:attributes="src python:thumbnail.url if start else blank_img;
+                                                    width thumbnail/width;
+                                                    height thumbnail/height;
+                                                    alt gal_obj/Title;
+                                                    data-original thumbnail/url;
+                                                    class python: 'no-lazy' if start else 'lazy-hidden'" />
+                            </a>
+                        </div>
+                        <div class="tile-gallery-data" >
+                            <div class="tile-gallery-title" tal:content="gal_obj/Title" />
+                            <div class="tile-gallery-description" tal:content="gal_obj/Description" />
+                            <div class="tile-gallery-metadata">
+                                <span class="tile-gallery-section" tal:content="gal_obj/section" />
+                                <span tal:condition="view/show_dates"> - </span>
+                                <span class="tile-gallery-date"
+                                    tal:condition="view/show_dates"
+                                    tal:content="python: view.view_date(gal_obj)" />
+                            </div>
+                        </div>
+                    </div>
+                    </tal:items>
+                </div>
+                    <div>
+                        <a class="carousel-control left"
+                            href="#gallery-tile"
+                            data-slide="prev">&lsaquo;</a>
+                        <a class="carousel-control right"
+                            href="#gallery-tile"
+                            data-slide="next">&rsaquo;</a>
+                </div>
+                <div class="more-info">
+                    <a title="galeria"
+                        tal:attributes="href string:${context/@@plone_portal_state/portal_url}/galerias"
+                        i18n:translate="">
+                        Ver m&aacute;s
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="recent_videos">
+          <div class="videos-accordion carousel slide" id="video-tile">
+              <div class="carousel-inner">
+                    <tal:items repeat="video view/results">
+                    <div tal:define="start repeat/video/start"
+                        tal:attributes="class python:'active item' if start else 'item'">
+                        <div class="tile-gallery-photo"
+                            tal:attributes="class python:'tile-gallery-photo open' if start else 'tile-gallery-photo'">
+                            <div class="video-container"
+                                tal:define="media_widget nocall:view/@@media_widget;
+                                            media_render python:media_widget.generate_widget(**{
+                                                      'width':240,
+                                                      'height':150,
+                                                      'slug': video['slug'],
+                                                      'channel': 'videos-externos'
+                                            })"
+                                tal:content="structure python: media_render">
+                            </div>
+                        </div>
+                        <div class="tile-gallery-data" >
+                            <div class="tile-gallery-title" tal:content="video/titulo" />
+                            <div class="tile-gallery-description" tal:content="video/descripcion" />
+                        </div>
+                    </div>
+                    </tal:items>
+                </div>
+                    <div>
+                        <a class="carousel-control left"
+                            href="#video-tile"
+                            data-slide="prev">&lsaquo;</a>
+                        <a class="carousel-control right"
+                            href="#video-tile"
+                            data-slide="next">&rsaquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</dl>

@@ -1,0 +1,135 @@
+<dl class="portlet portletSocial"
+    i18n:domain="laradiodelsur.web.theme">
+
+   <div class="twitter-tile" >
+      <ul class="nav nav-tabs" id="laradiodelsur-social-tile">
+          <li id="twitter_tab" class="active">
+            <a href="#laradio_twitter" data-toggle="tab" i18n:translate=""> @laradiodelsur</a>
+          </li>
+          <li id="facebook_tab">
+            <a href="#laradio_facebook" data-toggle="tab" i18n:translate=""> LaRadiodelSur</a>
+          </li>
+      </ul>
+
+      <div class="tab-content">
+          <div class="tab-pane active" id="laradio_twitter">
+              <div class="mostHotThreads twitter"
+                  tal:define="twitter_elems view/get_twitts;">
+                  <div class="twitter-item-tile avatar-on">
+                    <div class="result-item-twitter" tal:repeat="result twitter_elems">
+                        <div class="result-item-twitter-container" tal:attributes="data-twit-id result/GetId">
+                          <div class="tweet-image">
+                            <img class="avatar"
+                                src="#" alt="avatar"
+                                tal:attributes="src python:result.GetUser().GetProfileImageUrl()"/>
+                          </div>
+                          <div class="tweet-content">
+                            <div class="tweet-row">
+                                <span class="tweet-user-name">
+                                    <a class="tweet-screen-name"
+                                    href="#"
+                                    tal:define="screen_name python:result.GetUser().GetScreenName()"
+                                    tal:attributes="href string:http://twitter.com/${screen_name}">
+                                        <span tal:content="screen_name"/>
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="tweet-row">
+                                <div class="tweet-text">
+                                    <span tal:replace="structure python:view.get_tweet(result)"/>
+                                </div>
+                            </div>
+                          </div>
+                        <div class="tweet-actions">
+                          <a tal:attributes="href python:view.get_tweet_url(result)"
+                             class="tweet-timestamp"
+                             tal:content="python:view.get_pretty_date(result.GetCreatedAt())"></a>
+                          <a class="reply"
+                             tal:attributes="href python:view.get_reply_tweet_url(result)"
+                             i18n:translate="">Reply </a>
+                          <a class="retweet"
+                             tal:attributes="href python:view.get_re_tweet_url(result)"
+                             i18n:translate="">ReTweet </a>
+                          <a class="fav"
+                             tal:attributes="href python:view.get_fav_tweet_url(result)"
+                             i18n:translate="">Favorite </a>
+                        </div>
+                        <div class="more" tal:define="screen_name python:result.GetUser().GetScreenName()"><a tal:attributes="href string:http://twitter.com/${screen_name}">+</a></div>
+                        <div style="clear:both"></div>
+                    </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+      <div class="tab-pane" id="laradio_facebook">
+          <div class="facebook-item" tal:repeat="result view/get_facebook_results">
+              <tal:block define="type_link python: result.get('type') == u'link';
+                                  type_status python: result.get('type') == u'status';
+                                  loc_date python:view.get_pretty_date(result.get('created_time'));
+                                  link_url python:result.get('link', '');
+                                  link_name python:result.get('name', '');
+                                  status_msg python:result.get('message', '');
+                                  comments python:result.get('comments', {});
+                                  comments_count python:comments.get('count', 0);
+                                  avatar python:result.get('avatar', '');
+                                  username python:result.get('username', '');
+                                  user_url python:result.get('user_url', '');
+                                  post_url python:result.get('post_url', {});
+                                  likes python:result.get('likes', {});
+                                  likes_count python:likes.get('count', 0);">
+
+                <div tal:condition="python:type_link or type_status"
+                     tal:attributes="class python:type_link and 'statusUpdate link' or type_status and 'statusUpdate status'"
+                     class="#">
+                <div class="avatar">
+                  <img alt=" avatar" tal:attributes="src avatar" />
+                </div>
+                  <div class="result_username">
+                    <a tal:attributes="href user_url" tal:content="username"></a>
+                  </div>
+                    <div class="result_content">
+                      <a href="#"
+                         tal:attributes="href link_url"
+                         tal:content="link_name"
+                         tal:condition="type_link">
+                      </a>
+                      <p tal:content="status_msg"
+                         tal:condition="type_status"></p>
+                    </div>
+                    <div class="status-info">
+                        <span class="date_and_time" tal:content="loc_date" />
+                        <span tal:condition="python: int(likes_count) != 0 and int(likes_count) != 1" class="like">
+                          <span i18n:translate="">
+                            <span tal:content="likes_count"
+                                  i18n:name="likes_count"/> people like this.
+                          </span>
+                        </span>
+                        <span tal:condition="python: int(likes_count) == 1" class="like">
+                          <span i18n:translate="">
+                            <span tal:content="likes_count"
+                                  i18n:name="likes_count_one"/> person likes this.
+                          </span>
+                        </span>
+                        <span tal:condition="python: int(comments_count) != 0 and int(comments_count) != 1" class="comments">
+                          <span i18n:translate="">
+                            <span tal:content="comments_count"
+                                  i18n:name="comments"/> comments.
+                          </span>
+                        </span>
+                        <span tal:condition="python: int(comments_count) == 1" class="comments">
+                          <span i18n:translate="">
+                            <span tal:content="comments_count"
+                                  i18n:name="comments_one"/> comment.
+                          </span>
+                        </span>
+                    </div>
+                            <div class="more"><a tal:attributes="href user_url">+</a></div>
+                </div>
+              </tal:block>
+
+            </div>
+      </div>
+  </div>
+  </div>
+</dl>

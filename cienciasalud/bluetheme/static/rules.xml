@@ -9,17 +9,19 @@
     <theme href="home.html" css:if-content="body.template-folder_summary_view.portaltype-plone-site" />
     <theme href="home.html" css:if-content="body.template-folder_listing.portaltype-plone-site" />
     <theme href="home.html" css:if-content="body.template-folder_contents.portaltype-plone-site" />
+    <theme href="home.html" css:if-content=".portaltype-collective-cover-content" />
+
     <theme href="listing.html" css:if-content="body.template-folder_summary_view" />
     <theme href="listing.html" css:if-content="body.template-folder_listing" />
     <theme href="listing.html" css:if-content="body.template-folder_contents" />
     <theme href="listing.html" css:if-content="body.template-disqus_summary_listing" />
+
     <theme href="item.html" css:if-content="body.template-atct_edit" />
     <theme href="item.html" css:if-content="body.template-manage-portlets" />
     <theme href="item.html" css:if-content="body.portaltype-news-item" />
     <theme href="item.html" css:if-content="body.portaltype-document" />
     <theme href="item.html" css:if-content="body.portaltype-collective-nitf-content" />
 
-    <theme href="home.html" css:if-content="body.template-collage_view" />
     <theme href="noads.html" css:if-content="#visual-portal-wrapper" />
 
     <rules css:if-content="#visual-portal-wrapper" >
@@ -29,13 +31,6 @@
         <!-- Add meta tags -->
         <drop theme="/html/head/meta" />
         <after content="/html/head/meta" theme-children="/html/head" />
-        <!-- Drop styles in the head - these are added back by including them from Plone -->
-        <!--drop theme="/html/head/link" />
-        <drop theme="/html/head/style" />
-        <drop theme="/html/head/script" /-->
-        <!--
-        <drop css:content="link[href *='public.css']" />
-        -->
 
         <!-- Copy style, script and link tags in the order they appear in the content -->
         <before
@@ -47,7 +42,6 @@
         <replace theme="/html/head/title" content="html/head/title" />
 
         <copy attributes="*" css:theme="body" css:content="body" />
-        <!--after css:theme="#logo" css:content="#portal-personaltools-wrapper" /-->
         <!-- -->
         <before css:theme-children="#leaderboard" css:content="#portal-personaltools-wrapper" />
         <!-- -->
@@ -80,6 +74,12 @@
         <replace css:theme=".item #list-content" css:content-children="#content" />
         <replace css:theme=".special #list-content" css:content-children="#content" />
         <replace css:theme="#list-content" css:content="#content-core" />
+
+        <!-- HOME VIEW-->
+        <before css:theme=".main-content" css:content="#edit-bar" />
+        <replace css:theme=".main-content" css:content-children="#content" />
+        <replace css:if-content=".portaltype-collective-cover-content" css:theme-children="#sidebar .col-one" css:content-children="#portal-column-two" />
+
 
         <!-- FOOTER -->
         <replace css:theme="#footer #links" css:content="#portal-footer #footer-links" />

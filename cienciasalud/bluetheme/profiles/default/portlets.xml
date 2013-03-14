@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<portlets
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone">
+
+  <portlet
+      addview="cienciasalud.bluetheme.portlets.Multimedia"
+      title="Galleries and Videos"
+      description="A portlet which displays galleris and videos"
+      i18n:attributes="title; description"
+      />
+
+  <portlet
+      addview="cienciasalud.bluetheme.portlets.Social"
+      title="Facebook and Twitter"
+      description="A portlet which feeds from facebook and twitter"
+      i18n:attributes="title; description"
+      />
+
+</portlets>
