@@ -1,0 +1,3 @@
+<div id="omplayer-container" tal:attributes="id view/conf/id"></div>
+<script tal:condition="python:'slugs' not in view.conf" type="text/javascript" tal:content="view/js_code" />
+<script tal:condition="python: 'slugs' in view.conf" type="text/javascript" tal:content="structure view/js_code_playlist" />

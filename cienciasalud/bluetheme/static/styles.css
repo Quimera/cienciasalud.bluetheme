@@ -577,6 +577,11 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
 
 
 
+
+dl.portlet a:link {
+    border: medium none;
+}
+
 /*HOME PORTADA*/
 .nitf-secondary-item {
     width: 275px;
@@ -587,6 +592,25 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
     margin-left: 15px;
     margin-bottom: 30px;
     overflow: hidden;
+}
+
+.nitf-principal-item .nitf-principal-image {
+    width: 200px;
+    height: 150px;
+    float: left;
+    overflow: hidden;
+    background-color: #EEE;
+}
+.nitf-principal-item {
+    border-bottom: 5px solid #336699;
+    width: 100%;
+    min-height: 150px;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.nitf-principal-item .nitf-data {
+    padding-left: 215px;
 }
 
 /*SIDEBAR*/
@@ -602,7 +626,7 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
 .portaltype-collective-cover-content #sidebar .portlet .portletHeader span {
     background: url("images/corner1.png") no-repeat scroll 0 0 transparent;
     display: block;
-    height: 23px;
+    height: 29px;
     overflow: hidden;
     padding: 7px 0 0 10px;
     font-size: 13px;
@@ -612,4 +636,64 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
 }
 .portletTopLeft, .portletTopRight {
     display:none !important;
+}
+/*portlet manager fix*/
+.portaltype-collective-cover-content #sidebar .managedPortlet .portletHeader {
+    padding: 0.42em 1em;
+    background: none repeat scroll 0 0 #DDDDDD;
+}
+.portaltype-collective-cover-content #sidebar .portlet .portletHeader .managedPortletActions {
+    background: none repeat scroll 0 0 transparent; 
+    padding: 0px;
+}
+.portaltype-collective-cover-content #sidebar .managedPortlet .portletHeader a {
+    color:#000;
+}
+
+/*twitter portlet*/
+.tweet-image {
+    float: left;
+    padding-right: 5px;
+}
+#twitter-portlet .tweet-user-name a:visited, 
+#twitter-portlet .tweet-user-name a:link, 
+#twitter-portlet .tweet-text a:visited, 
+#twitter-portlet .tweet-text a:link, 
+#twitter-portlet .result_username a:visited, 
+#twitter-portlet .result_username a:link, 
+#twitter-portlet .thread-content a.thread-title:visited, 
+#twitter-portlet .thread-content a.thread-title:link {
+    color: #205C90;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+#twitter-portlet .twitter-item-tile .more a:visited, 
+#twitter-portlet .twitter-item-tile .more a:hover, 
+#twitter-portlet .twitter-item-tile .more a:link, 
+#twitter-portlet .twitter-item .more a:visited, 
+#twitter-portlet .twitter-item .more a:hover, 
+#twitter-portlet .twitter-item .more a:link {
+    color: #ffffff;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.twitter-item-tile .more, 
+.twitter-item .more {
+    background-color: #205C90;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    right: 10px;
+    text-align: center;
+}
+
+.result-item-twitter-container {
+    min-height: 70px;
+    position: relative;
 }

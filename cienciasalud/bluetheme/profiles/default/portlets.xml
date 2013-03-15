@@ -5,15 +5,15 @@
 
   <portlet
       addview="cienciasalud.bluetheme.portlets.Multimedia"
-      title="Galleries and Videos"
-      description="A portlet which displays galleris and videos"
+      title="Videos"
+      description="A portlet which displays videos"
       i18n:attributes="title; description"
       />
 
   <portlet
       addview="cienciasalud.bluetheme.portlets.Social"
-      title="Facebook and Twitter"
-      description="A portlet which feeds from facebook and twitter"
+      title="Twitter"
+      description="A portlet which feeds from twitter"
       i18n:attributes="title; description"
       />
 

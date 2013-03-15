@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="cienciasalud.bluetheme">
+
+<body>
+
+<div class="sortable-tile nitf-principal">
+    <div class="clear"> </div>
+    <h2 class="head">Titulares</h2>
+    <tal:items repeat="obj view/results">
+    <div class="nitf-principal-item" style="position: relative"
+        tal:define="article_url obj/absolute_url;
+                    portal_url context/@@plone_portal_state/portal_url;
+                    img python:view.getImage(obj)"
+        tal:attributes="data-uid python:view.get_uid(obj)">
+
+        <div class="nitf-principal-image" tal:condition="img">
+            <div class="nitf-principal-image-container">
+                <tal:image>
+                <a class="imag" tal:attributes="href article_url; title obj/Description">
+                    <img class="lazy"
+                        tal:define="blank_img string:${portal_url}/++theme++cienciasalud.bluetheme/images/blank.gif;
+                                    scales obj/@@images;
+                                    thumbnail python: scales.scale('image', width=200, height=200);"
+                        tal:condition="thumbnail"
+                        tal:attributes="src blank_img;
+                                        width thumbnail/width;
+                                        height thumbnail/height;
+                                        alt thumbnail/Description;
+                                        data-original thumbnail/url" />
+                </a>
+                </tal:image>
+            </div>
+        </div>
+
+        <div class="nitf-data">
+            <div class="principal-title">
+                <h4><a tal:attributes="href article_url" tal:content="obj/Title" /></h4>
+            </div>
+            <div class="principal-description" tal:content="obj/Description" />
+        </div>
+
+    </div>
+    </tal:items>
+</div>
+
+</body>
+</html>

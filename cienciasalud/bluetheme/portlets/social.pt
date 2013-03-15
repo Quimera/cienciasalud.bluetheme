@@ -1,18 +1,12 @@
 <dl class="portlet portletSocial"
-    i18n:domain="laradiodelsur.web.theme">
+    i18n:domain="cienciasalud.bluetheme">
 
-   <div class="twitter-tile" >
-      <ul class="nav nav-tabs" id="laradiodelsur-social-tile">
-          <li id="twitter_tab" class="active">
-            <a href="#laradio_twitter" data-toggle="tab" i18n:translate=""> @laradiodelsur</a>
-          </li>
-          <li id="facebook_tab">
-            <a href="#laradio_facebook" data-toggle="tab" i18n:translate=""> LaRadiodelSur</a>
-          </li>
-      </ul>
+    <dt class="portletHeader">
+          <span tal:content="python:'@' + view.data.account">cienciasalud</span>
+    </dt>
 
-      <div class="tab-content">
-          <div class="tab-pane active" id="laradio_twitter">
+      <dd class="tab-content portletItem">
+          <div id="twitter-portlet">
               <div class="mostHotThreads twitter"
                   tal:define="twitter_elems view/get_twitts;">
                   <div class="twitter-item-tile avatar-on">
@@ -40,7 +34,7 @@
                                 </div>
                             </div>
                           </div>
-                        <div class="tweet-actions">
+                        <!-- <div class="tweet-actions">
                           <a tal:attributes="href python:view.get_tweet_url(result)"
                              class="tweet-timestamp"
                              tal:content="python:view.get_pretty_date(result.GetCreatedAt())"></a>
@@ -53,7 +47,7 @@
                           <a class="fav"
                              tal:attributes="href python:view.get_fav_tweet_url(result)"
                              i18n:translate="">Favorite </a>
-                        </div>
+                        </div> -->
                         <div class="more" tal:define="screen_name python:result.GetUser().GetScreenName()"><a tal:attributes="href string:http://twitter.com/${screen_name}">+</a></div>
                         <div style="clear:both"></div>
                     </div>
@@ -61,75 +55,5 @@
                   </div>
             </div>
           </div>
-
-      <div class="tab-pane" id="laradio_facebook">
-          <div class="facebook-item" tal:repeat="result view/get_facebook_results">
-              <tal:block define="type_link python: result.get('type') == u'link';
-                                  type_status python: result.get('type') == u'status';
-                                  loc_date python:view.get_pretty_date(result.get('created_time'));
-                                  link_url python:result.get('link', '');
-                                  link_name python:result.get('name', '');
-                                  status_msg python:result.get('message', '');
-                                  comments python:result.get('comments', {});
-                                  comments_count python:comments.get('count', 0);
-                                  avatar python:result.get('avatar', '');
-                                  username python:result.get('username', '');
-                                  user_url python:result.get('user_url', '');
-                                  post_url python:result.get('post_url', {});
-                                  likes python:result.get('likes', {});
-                                  likes_count python:likes.get('count', 0);">
-
-                <div tal:condition="python:type_link or type_status"
-                     tal:attributes="class python:type_link and 'statusUpdate link' or type_status and 'statusUpdate status'"
-                     class="#">
-                <div class="avatar">
-                  <img alt=" avatar" tal:attributes="src avatar" />
-                </div>
-                  <div class="result_username">
-                    <a tal:attributes="href user_url" tal:content="username"></a>
-                  </div>
-                    <div class="result_content">
-                      <a href="#"
-                         tal:attributes="href link_url"
-                         tal:content="link_name"
-                         tal:condition="type_link">
-                      </a>
-                      <p tal:content="status_msg"
-                         tal:condition="type_status"></p>
-                    </div>
-                    <div class="status-info">
-                        <span class="date_and_time" tal:content="loc_date" />
-                        <span tal:condition="python: int(likes_count) != 0 and int(likes_count) != 1" class="like">
-                          <span i18n:translate="">
-                            <span tal:content="likes_count"
-                                  i18n:name="likes_count"/> people like this.
-                          </span>
-                        </span>
-                        <span tal:condition="python: int(likes_count) == 1" class="like">
-                          <span i18n:translate="">
-                            <span tal:content="likes_count"
-                                  i18n:name="likes_count_one"/> person likes this.
-                          </span>
-                        </span>
-                        <span tal:condition="python: int(comments_count) != 0 and int(comments_count) != 1" class="comments">
-                          <span i18n:translate="">
-                            <span tal:content="comments_count"
-                                  i18n:name="comments"/> comments.
-                          </span>
-                        </span>
-                        <span tal:condition="python: int(comments_count) == 1" class="comments">
-                          <span i18n:translate="">
-                            <span tal:content="comments_count"
-                                  i18n:name="comments_one"/> comment.
-                          </span>
-                        </span>
-                    </div>
-                            <div class="more"><a tal:attributes="href user_url">+</a></div>
-                </div>
-              </tal:block>
-
-            </div>
-      </div>
-  </div>
-  </div>
+    </dd>
 </dl>

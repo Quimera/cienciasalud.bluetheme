@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts" meta_type="JavaScripts Registry">
+
+  <javascript
+      id="++theme++cienciasalud.bluetheme/javascripts/jquery.lazyload.min.js"
+      compression="none" expression="request/HTTP_X_THEME_ENABLED | nothing" />
+
+  <javascript
+    id="++theme++cienciasalud.bluetheme/javascripts/main.js"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+    compression="none" cookable="False" />
+
+</object>

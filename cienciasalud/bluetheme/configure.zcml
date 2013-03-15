@@ -35,6 +35,7 @@
       type="theme" directory="static" />
 
   <!-- -*- extra stuff goes here -*- -->
+  <include package=".views" />
   <include package=".tiles" /> 
   <include package=".portlets" />
 

@@ -29,8 +29,6 @@ logger = logging.getLogger('cienciasalud.bluetheme')
 LIMIT = 3
 SECONDS = 60
 
-GRAPH_URL = "https://graph.facebook.com/%s?access_token=%s"
-FB_WALL_ID = 'LaRadiodelSur'
 ONLY_SELF = False  # Only get statuses submitted by me
 
 MAX_FETCHES = 3
@@ -79,11 +77,6 @@ class ISocialPortlet(IPortletDataProvider):
         required=False,
     )
 
-    facebook_wall = schema.TextLine(
-        title=_(u'Facebook Wall Id'),
-        required=False,
-    )
-
 
 class Assignment(base.Assignment):
     """Portlet assignment.
@@ -97,12 +90,10 @@ class Assignment(base.Assignment):
     show_dates = True
     pretty_date = True
 
-    def __init__(self, search_text='', search_account='', account='',
-                 facebook_wall='', limit=4, **kwargs):
+    def __init__(self, search_text='', search_account='', account='', limit=4, **kwargs):
         self.search_text = search_text
         self.search_account = search_account
         self.account = account
-        self.facebook_wall = facebook_wall
         self.limit = limit
 
     @property
@@ -110,7 +101,7 @@ class Assignment(base.Assignment):
         """This property is used to give the title of the portlet in the
         "manage portlets" screen.
         """
-        return _(u"Social Portlet (Facebook and Twitter")
+        return _(u"Social Portlet Twitter")
 
 
 def cache_key_simple(func, var):
@@ -154,12 +145,6 @@ class Renderer(base.Renderer):
         text = self.data.search_text
         if not text:
             text = None
-        return text
-
-    def get_facebook_wall_id(self):
-        text = self.data.facebook_wall
-        if not text:
-            text = FB_WALL_ID
         return text
 
     def get_search_account(self):
@@ -310,88 +295,6 @@ class Renderer(base.Renderer):
         date = date_utility.date(date)
 
         return date
-
-    @ram.cache(cache_key_simple)
-    def get_facebook_results(self):
-        logger.debug("Going to Facebook to fetch results.")
-
-        registry = getUtility(IRegistry)
-        accounts = registry.get('collective.facebook.accounts', None)
-
-        result = []
-
-        LIMIT = self.get_limit()
-        FB_WALL_ID = self.get_facebook_wall_id()
-
-        if accounts and len(accounts.values()) > 0:
-
-            access_token = accounts.values()[0]['access_token']
-
-            wall = FB_WALL_ID + '/feed'
-            params = access_token + '&limit=%s' % LIMIT
-
-            url = GRAPH_URL % (wall, params)
-
-            logger.debug("Using account '%s'" % FB_WALL_ID)
-
-            query_result = json.load(urllib.urlopen(url))
-
-            if ONLY_SELF:
-                logger.debug("Only get posts from self.")
-                # Let's get the ID for the wall owner
-                uurl = GRAPH_URL % (FB_WALL_ID, access_token)
-                logger.debug("URL to get ID: %s" % uurl)
-                account_data = json.load(urllib.urlopen(uurl))
-                uid = None
-                if 'id' in account_data.keys():
-                    uid = account_data['id']
-
-            # Now, let's iterate on each result until we have the amount
-            # we wanted
-            logger.debug("About to start getting results...")
-            #we need to give a max number of fetches.. or we may have a big
-            #and long loop
-            fetch_number = 0
-            while ('paging' in query_result and
-                    len(result) < LIMIT and
-                    fetch_number < MAX_FETCHES):
-                try:
-                    post = query_result['data'].pop(0)
-                except IndexError:
-                    logger.debug("%s results so far. Need to fetch "
-                                 "some more..." % len(result))
-                    # If we are here, it means, we need to query for the
-                    # next page of results
-                    fetch_number += 1
-                    url = query_result['paging']['next']
-                    logger.debug("Next URL: %s" % url)
-                    query_result = json.load(urllib.urlopen(url))
-
-                if not (post['type'] == u'status' or post['type'] == u'link'):
-                    # We don't want anything, except status updates or links
-                    continue
-
-                if post['type'] == u'status' and 'message' not in post:
-                    # we don't care about statuses with no messages
-                    # (new friends, etc...)
-                    continue
-
-                post['avatar'] = "http://graph.facebook.com/%s/picture" % \
-                    post['from']['id']
-                post['username'] = post['from']['name']
-                post['user_url'] = "http://www.facebook.com/%s" % \
-                    post['from']['id']
-                if 'object_id' in post.keys():
-                    post['post_url'] = "http://www.facebook.com/%s" % \
-                        post['object_id']
-                if ONLY_SELF:
-                    if post['from']['id'] == uid:
-                        result.append(post)
-                else:
-                    result.append(post)
-
-        logger.debug("Done. returning %s results" % len(result))
-        return result
 
 
 class AddForm(base.AddForm):

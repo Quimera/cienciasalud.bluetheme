@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="cienciasalud.bluetheme">
+
+    <!-- Video Widget-->
+    <browser:page
+      for="*"
+      name="media_widget"
+      class=".media_widget.MediaWidget"
+      permission="zope.Public"
+      allowed_interface=".interfaces.IMediaWidget"
+      />
+
+</configure>

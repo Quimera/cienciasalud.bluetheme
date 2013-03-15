@@ -30,6 +30,7 @@ setup(name='cienciasalud.bluetheme',
           'collective.cover',
           'collective.prettydate',
           'openmultimedia.api',
+          'collective.twitter.tweet',
           'python-twitter',
       ],
       entry_points="""

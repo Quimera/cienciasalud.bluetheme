@@ -4,6 +4,7 @@
     <record name="plone.app.tiles">
       <value purge="false">
         <element>cienciasalud.portada.nitfsecondary</element>
+        <element>cienciasalud.portada.nitfprincipal</element>
       </value>
     </record>
 

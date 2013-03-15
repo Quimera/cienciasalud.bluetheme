@@ -26,16 +26,6 @@ class IMultimediaPortlet(IPortletDataProvider):
     same.
     """
 
-    gallery_section = schema.TextLine(
-        title=_(u'Gallery section'),
-        required=False,
-    )
-
-    gallery_tags = schema.TextLine(
-        title=_(u'Gallery tags'),
-        required=False,
-    )
-
     videos_url = schema.TextLine(
         title=_(u'Videos url'),
         required=False,
@@ -65,11 +55,8 @@ class Assignment(base.Assignment):
     show_dates = True
     pretty_date = True
 
-    def __init__(self, gallery_section='', gallery_tags='', videos_url='',
-                 limit=4, show_date=True, **kwargs):
+    def __init__(self, videos_url='', limit=4, show_date=True, **kwargs):
         self.show_date = show_date
-        self.gallery_section = gallery_section
-        self.gallery_tags = gallery_tags
         self.videos_url = videos_url
         self.limit = limit
 
@@ -99,12 +86,6 @@ class Renderer(base.Renderer):
 
     LIMIT = 4
 
-    def get_tag(self):
-        return self.data.gallery_tags
-
-    def get_section(self):
-        return self.data.gallery_section
-
     def get_video_url(self):
         return self.data.videos_url
 
@@ -124,60 +105,6 @@ class Renderer(base.Renderer):
             url = "%s&tipo_contenido=video-externo" % url
         content_json = video_api.get_json(url)
         return content_json[:limit]
-
-    def galleries(self):
-        query = {'portal_type': 'openmultimedia.contenttypes.gallery',
-                 'review_state': 'published', 'sort_on': 'effective',
-                 'sort_order': 'descending'}
-        tag = self.get_tag()
-        if tag:
-            tags = tuple(tag.split(","))
-            query['Subject'] = tags
-
-        section = self.get_section()
-        if section:
-            query['section'] = section
-        catalog = getToolByName(self.context, 'portal_catalog')
-        results = catalog(query)
-        return results[:self.get_limit()]
-
-    def _get_brains(self, obj, object_provides=None):
-        """ Return a list of brains inside the NITF object.
-        """
-        catalog = getToolByName(self.context, 'portal_catalog')
-        path = '/'.join(obj.getPhysicalPath())
-        brains = catalog(object_provides=object_provides, path=path,
-                         sort_on='getObjPositionInParent')
-
-        return brains
-
-    def get_images(self, obj):
-        """ Return a list of image brains inside the NITF object.
-        """
-        return self._get_brains(obj, IATImage.__identifier__)
-
-    def has_images(self, obj):
-        """ Return the number of images inside the NITF object.
-        """
-        return len(self.get_images(obj))
-
-    def getImage(self, obj):
-        images = self.get_images(obj)
-        if len(images) > 0:
-            return images[0].getObject()
-        return None
-
-    def imageCaption(self, obj):
-        image = self.getImage(obj)
-        if image is not None:
-            return image.Description()
-
-    def tag(self, obj, **kwargs):
-        # tag original implementation returns object title in both, alt and
-        # title attributes
-        image = self.getImage(obj)
-        if image is not None:
-            return image.tag(**kwargs)
 
     def view_date(self, item):
         date = item.Date()
