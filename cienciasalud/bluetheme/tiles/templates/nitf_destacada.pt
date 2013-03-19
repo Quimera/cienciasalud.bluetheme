@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="cienciasalud.bluetheme">
+
+<body>
+
+<div class="sortable-tile nitf-destacada">
+    <tal:items repeat="obj view/results">
+    <div style="position: relative"
+         tal:define="article_url obj/absolute_url;
+                     portal_url context/@@plone_portal_state/portal_url;
+                     start repeat/obj/start;
+                     has_images python:view.getImage(obj)"
+         tal:attributes="data-uid python:view.get_uid(obj);
+                         class python:'nitf-destacada-item destacada-' + ('principal' if repeat['obj'].start else 'secondary')">
+        <div class="nitf-destacada-image">
+            <div class="nitf-destacada-image-container">
+                <div class="destacada-image-container"
+                    tal:define="blank_img string:${portal_url}/++theme++cienciasalud.bluetheme/images/blank.gif">
+                    <tal:image condition="python:has_images and start">
+                    <a class="imag a"
+                        tal:attributes="href article_url; title obj/Description">
+                        <img class="lazy"
+                            tal:define="scales obj/@@images;
+                                        thumbnail python: scales.scale('image', width=300, height=300)"
+                            tal:condition="thumbnail"
+                            tal:attributes="src blank_img;
+                                            width thumbnail/width;
+                                            height thumbnail/height;
+                                            alt thumbnail/Description;
+                                            data-original thumbnail/url" />
+                    </a>
+                    </tal:image>
+                    <tal:image condition="python:has_images and not start">
+                    <a class="imag"
+                        tal:attributes="href article_url; title obj/Description">
+                        <img class="lazy"
+                            tal:define="scales obj/@@images;
+                                        thumbnail python: scales.scale('image', width=270, height=270)"
+                            tal:condition="thumbnail"
+                            tal:attributes="src blank_img;
+                                            width thumbnail/width;
+                                            height thumbnail/height;
+                                            alt thumbnail/Description;
+                                            data-original thumbnail/url" />
+                    </a>
+                    </tal:image>
+                </div>
+            </div>
+        </div>
+
+        <div class="cienciasalud-nitf-data">
+            <div class="destacada-title">
+                <h4><a tal:attributes="href article_url" tal:content="obj/Title" /></h4>
+            </div>
+            <div class="destacada-description" tal:content="obj/Description"/>
+        </div>
+
+    </div>
+    </tal:items>
+
+</div>
+
+</body>
+</html>

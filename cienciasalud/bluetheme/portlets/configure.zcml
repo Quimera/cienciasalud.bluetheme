@@ -25,4 +25,15 @@
     edit_permission="cmf.ManagePortal"
     />
 
+  <plone:portlet
+    name="cienciasalud.bluetheme.portlets.Category"
+    interface=".category.ICategoryPortlet"
+    assignment=".category.Assignment"
+    renderer=".category.Renderer"
+    addview=".category.AddForm"
+    editview=".category.EditForm"
+    view_permission="zope2.View"
+    edit_permission="cmf.ManagePortal"
+    />
+
 </configure>

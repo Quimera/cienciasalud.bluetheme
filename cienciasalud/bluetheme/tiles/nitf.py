@@ -101,3 +101,15 @@ class NitfSecundary(NitfPrincipal):
 
     is_configurable = True
     limit = 6
+
+
+class INitfDestacada(INitfPrincipal):
+    """
+    """
+
+
+class NitfDestacada(NitfPrincipal):
+
+    index = ViewPageTemplateFile("templates/nitf_destacada.pt")
+
+    limit = 3

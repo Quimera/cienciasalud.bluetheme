@@ -78,51 +78,53 @@
         <!-- HOME VIEW-->
         <before css:theme=".main-content" css:content="#edit-bar" />
         <replace css:theme=".main-content" css:content-children="#content" />
-        <replace css:if-content=".portaltype-collective-cover-content" css:theme-children="#sidebar .col-one" css:content-children="#portal-column-two" />
-
+        <replace css:theme-children="#sidebar .col-one" css:content-children="#portal-column-two" />
 
         <!-- FOOTER -->
         <replace css:theme="#footer #links" css:content="#portal-footer #footer-links" />
         <replace css:theme="#footer #legal" css:content="#portal-footer #footer-legal" />
 
         <!-- PORTLETS COLUMN TWO -->
-        <!--replace css:theme-children="#colone" css:content-children="#portal-column-two" /-->
-        <replace method="raw" css:theme-children="#enfer h2 span" css:content="dl.portlet-collection-enfermedades .portletHeader a" />
-        <after css:theme-children="#enfer" css:content="dl.portlet-collection-enfermedades" />
-        <before css:if-content="dl.portlet-collection-enfermedades" css:theme="#enfer h2">
+        <!--replace css:theme-children="#colone" css:content-children="#portal-column-two" /--><!-- 
+        <replace method="raw" css:theme-children="#enfer h2 span" css:content="dl.portlet-collection-enfermedades .portletHeader a" /> -->
+        <!-- <after css:theme-children="#enfer" css:content="dl.portlet-collection-enfermedades" /> -->
+        <replace css:if-content="#enfermedades" css:content="#enfermedades img">
             <img src="++theme++cienciasalud.bluetheme/images/enfermedades.png"
                 width="32" height="32" class="image-left"
                 alt="Enfermedades" />
-        </before>
-        <drop css:content="dl.portlet-collection-enfermedades .portletHeader" />
+        </replace>
+        <!-- <drop css:content="dl.portlet-collection-enfermedades .portletHeader" /> -->
 
-        <replace method="raw" css:theme-children="#medpr h2 span" css:content="dl.portlet-collection-medicina-preventiva .portletHeader a" />
-        <after css:theme-children="#medpr" css:content="dl.portlet-collection-medicina-preventiva" />
-        <drop css:content="dl.portlet-collection-medicina-preventiva .portletHeader" />
-        <before css:if-content="dl.portlet-collection-medicina-preventiva" css:theme="#medpr h2">
+        <!-- <replace method="raw" css:theme-children="#medpr h2 span" css:content="dl.portlet-collection-medicina-preventiva .portletHeader a" /> -->
+        <!-- <after css:theme-children="#medpr" css:content="dl.portlet-collection-medicina-preventiva" /> -->
+        <!-- <drop css:content="dl.portlet-collection-medicina-preventiva .portletHeader" /> -->
+        <replace css:if-content="#medicina-preventiva" css:content="#medicina-preventiva img">
             <img src="++theme++cienciasalud.bluetheme/images/preventiva.png"
                 width="32" height="32" class="image-left"
                 alt="Medicina preventiva" />
-        </before>
+        </replace>
         
-        <replace method="raw" css:theme-children="#medna h2 span" css:content="dl.portlet-collection-medicina-natural .portletHeader a" />
-        <after css:theme-children="#medna" css:content="dl.portlet-collection-medicina-natural" />
-        <drop css:content="dl.portlet-collection-medicina-natural .portletHeader" />
-        <before css:if-content="dl.portlet-collection-medicina-natural" css:theme="#medna h2">
+        <!-- <replace method="raw" css:theme-children="#medna h2 span" css:content="dl.portlet-collection-medicina-natural .portletHeader a" /> -->
+        <!-- <after css:theme-children="#medna" css:content="dl.portlet-collection-medicina-natural" /> -->
+        <!-- <drop css:content="dl.portlet-collection-medicina-natural .portletHeader" /> -->
+        <replace css:if-content="#medicina-natural" css:content="#medicina-natural img">
             <img src="++theme++cienciasalud.bluetheme/images/natural.png"
                 width="32" height="32" class="image-left"
                 alt="Medicina natural" />
-        </before>
+        </replace>
         
-        <replace method="raw" css:theme-children="#perso h2 span" css:content="dl.portlet-collection-personalidades .portletHeader a" />
-        <after css:theme-children="#perso" css:content="dl.portlet-collection-personalidades" />
-        <drop css:content="dl.portlet-collection-personalidades .portletHeader" />
-        <before css:if-content="dl.portlet-collection-personalidades" css:theme="#perso h2">
+        <!-- <replace method="raw" css:theme-children="#perso h2 span" css:content="dl.portlet-collection-personalidades .portletHeader a" /> -->
+        <!-- <after css:theme-children="#perso" css:content="dl.portlet-collection-personalidades" /> -->
+        <!-- <drop css:content="dl.portlet-collection-personalidades .portletHeader" /> -->
+        <replace css:if-content="#personalidades" css:content="#personalidades img">
             <img src="++theme++cienciasalud.bluetheme/images/personalidades.png"
                 width="32" height="32" class="image-left"
                 alt="Personalidades" />
-        </before>
+        </replace>
         <after css:theme-children="#colone" css:content="div.managePortletsLink" />
+
+        <!-- css:if-content=".portaltype-collective-cover-content" -->
+
         <!-- MANAGE-PORTLETS -->
         <drop css:if-content="body.template-manage-portlets" theme="/html/body/div[3]/div[2]/div/div[1]" />
         <drop css:if-content="body.template-manage-portlets" theme="/html/body/div[3]/div[2]/div/div[3]" />

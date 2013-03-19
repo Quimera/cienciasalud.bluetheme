@@ -8,7 +8,6 @@
 
 <div class="sortable-tile nitf-principal">
     <div class="clear"> </div>
-    <h2 class="head">Titulares</h2>
     <tal:items repeat="obj view/results">
     <div class="nitf-principal-item" style="position: relative"
         tal:define="article_url obj/absolute_url;

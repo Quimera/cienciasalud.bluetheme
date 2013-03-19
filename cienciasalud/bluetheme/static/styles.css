@@ -475,14 +475,7 @@ img.right {
 #colone > div > img {
     float: left;
 }
-.home #colone > div > img {
-    float: none;
-    display: block;
-    margin: 0 auto;
-}
-.home #colone > div > h2 {
-    text-align: center;
-}
+
 #colone > div > h2 a {
     color: #336699;
 }
@@ -567,9 +560,6 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
 #colone dl.portlet a:link {
     border: none;
 }
-#page.listing dl.portlet, #page.item dl.portlet {
-    margin-left: 40px;
-}
 .item #parent-fieldname-title {
     font-size: 23px;
     color: #336699;
@@ -583,13 +573,55 @@ dl.portlet a:link {
 }
 
 /*HOME PORTADA*/
+.clear {
+    clear: both;
+}
+.template-compose .tile-container {
+    clear: both;
+}
+.nitf-destacada {
+    float: left;
+    clear: both;
+    padding-bottom: 40px;
+}
+.nitf-destacada-item {
+    float:left; 
+}
+.destacada-principal { 
+    width: 100%;
+    padding-bottom: 30px;
+    width: 100%;
+    clear: both;
+}
+.destacada-principal h4 {
+    font-size: 25px;
+}
+.destacada-secondary h4 {
+    font-size: 18px;
+}
+.nitf-destacada-image {
+    float:left;
+    padding-right: 20px;
+}
+.destacada-secondary {
+    width: 290px;
+}
+.destacada-secondary .destacada-image-container {
+    height: 250px;
+    overflow: hidden;
+}
+.destacada-secondary .cienciasalud-nitf-data {
+    clear: both;
+    padding-right: 25px;
+}
+
 .nitf-secondary-item {
     width: 275px;
     float: left;
     border-bottom: 5px solid #336699;
     position: relative;
     height: 235px;
-    margin-left: 15px;
+    margin-right: 15px;
     margin-bottom: 30px;
     overflow: hidden;
 }
@@ -614,16 +646,16 @@ dl.portlet a:link {
 }
 
 /*SIDEBAR*/
-.portaltype-collective-cover-content .portlet {
+.portlet {
     background: url("images/pleca.png") repeat-x scroll 0 0 transparent;
 }
-.portaltype-collective-cover-content #sidebar .portlet .portletHeader {
+#sidebar .portlet .portletHeader {
     background: url("images/corner2.png") no-repeat scroll right top transparent;
     color: #FFFFFF;
     font-size: 100%;
     padding: 0px;
 }
-.portaltype-collective-cover-content #sidebar .portlet .portletHeader span {
+#sidebar .portlet .portletHeader span {
     background: url("images/corner1.png") no-repeat scroll 0 0 transparent;
     display: block;
     height: 29px;
@@ -631,22 +663,22 @@ dl.portlet a:link {
     padding: 7px 0 0 10px;
     font-size: 13px;
 }
-.portaltype-collective-cover-content #sidebar .portlet .portletHeader a {
+#sidebar .portlet .portletHeader a {
     color:#FFF;
 }
 .portletTopLeft, .portletTopRight {
     display:none !important;
 }
 /*portlet manager fix*/
-.portaltype-collective-cover-content #sidebar .managedPortlet .portletHeader {
+#sidebar .managedPortlet .portletHeader {
     padding: 0.42em 1em;
     background: none repeat scroll 0 0 #DDDDDD;
 }
-.portaltype-collective-cover-content #sidebar .portlet .portletHeader .managedPortletActions {
+#sidebar .portlet .portletHeader .managedPortletActions {
     background: none repeat scroll 0 0 transparent; 
     padding: 0px;
 }
-.portaltype-collective-cover-content #sidebar .managedPortlet .portletHeader a {
+#sidebar .managedPortlet .portletHeader a {
     color:#000;
 }
 
@@ -696,4 +728,25 @@ dl.portlet a:link {
 .result-item-twitter-container {
     min-height: 70px;
     position: relative;
+}
+
+
+.portletItem .loading-mask {
+    display: none !important;
+}
+
+/*category portlet*/
+.portletCategory #colone dl{
+    margin-left: 40px;
+}
+.portletCategory #colone dd{
+    padding: 5px;
+}
+.portletItem #colone {
+    padding: 20px;
+}
+
+/*portlet fecha*/
+.portlet-fecha {
+    background: none repeat scroll 0 0 transparent;
 }

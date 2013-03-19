@@ -28,5 +28,17 @@
         for="*"
         i18n:attributes="title;description"
         />
+
+    <plone:tile
+        name="cienciasalud.portada.nitfdestacada"
+        title="Cienciasalud Destacada Tile"
+        description="A tile that shows a list of destacada News Articles"
+        add_permission="cmf.ModifyPortalContent"
+        schema=".nitf.INitfDestacada"
+        class=".nitf.NitfDestacada"
+        permission="zope2.View"
+        for="*"
+        i18n:attributes="title;description"
+        />
     
 </configure>

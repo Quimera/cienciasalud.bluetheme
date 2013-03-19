@@ -1,0 +1,36 @@
+<dl class="portlet portletCategory"
+    i18n:domain="cienciasalud.bluetheme"
+    tal:define="viewActions here/portal_properties/site_properties/typesUseViewActionInListings|python:();
+">
+
+    <dt class="portletHeader">
+          <span >Categorías</span>
+    </dt>
+
+    <dd class="portletItem">
+        <div id="colone">
+            <tal:block tal:repeat="collection view/results">
+                <div tal:attributes="id python:collection[0].id">
+                    <img src=""/>
+                    <h2>
+                        <span>
+                            <a tal:attributes="href python:collection[0].absolute_url()"
+                               tal:content="python:collection[0].Title()"></a>
+                        </span>
+                    </h2>
+                    <dl>
+                        <dd tal:repeat="results python:collection[1]">
+                            <a tal:define="useView python:results.portal_type in viewActions;
+                                         itemUrl python:useView and results.getURL() + '/view' or results.getURL();"
+                               tal:attributes="href itemUrl" 
+                               tal:content="results/Title"></a>
+                        </dd>
+                        <dd>
+                            <a tal:attributes="href python:collection[0].absolute_url()">Más…</a>
+                        </dd>
+                    </dl>
+                </div>
+            </tal:block>
+        </div>
+    </dd>
+</dl>

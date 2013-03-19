@@ -5,6 +5,7 @@
       <value purge="false">
         <element>cienciasalud.portada.nitfsecondary</element>
         <element>cienciasalud.portada.nitfprincipal</element>
+        <element>cienciasalud.portada.nitfdestacada</element>
       </value>
     </record>
 
