@@ -507,6 +507,9 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
 }
 #page dl, dl.portlet {
     margin: 0;
+    padding-top: 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 #legal, #links {
     display: none;
@@ -650,17 +653,19 @@ dl.portlet a:link {
     background: url("images/pleca.png") repeat-x scroll 0 0 transparent;
 }
 #sidebar .portlet .portletHeader {
-    background: url("images/corner2.png") no-repeat scroll right top transparent;
+    background: none repeat scroll 0 0 transparent;
     color: #FFFFFF;
     font-size: 100%;
-    padding: 0px;
+    padding: 0 0 0 10px;
+    height: 29px;
+    font-size: 13px;
 }
 #sidebar .portlet .portletHeader span {
-    background: url("images/corner1.png") no-repeat scroll 0 0 transparent;
+    background: none repeat scroll 0 0 transparent;
     display: block;
     height: 29px;
     overflow: hidden;
-    padding: 7px 0 0 10px;
+    padding: 0px;
     font-size: 13px;
 }
 #sidebar .portlet .portletHeader a {
