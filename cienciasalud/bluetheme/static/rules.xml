@@ -128,6 +128,9 @@
         <!-- MANAGE-PORTLETS -->
         <drop css:if-content="body.template-manage-portlets" theme="/html/body/div[3]/div[2]/div/div[1]" />
         <drop css:if-content="body.template-manage-portlets" theme="/html/body/div[3]/div[2]/div/div[3]" />
+
+        <!-- ANALYTICS -->
+        <after css:theme="#footer" css:content="#webanalytics" />
     </rules>
 
 </rules>
