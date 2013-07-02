@@ -613,6 +613,9 @@ dl.portlet a:link {
     height: 250px;
     overflow: hidden;
 }
+#content .destacada-image-container .imag {
+    border-bottom: medium none;
+}
 .destacada-secondary .cienciasalud-nitf-data {
     clear: both;
     padding-right: 25px;
